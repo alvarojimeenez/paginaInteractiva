@@ -1,0 +1,89 @@
+.containerGrid {
+    display: grid;
+    grid-template-rows: 200px 1fr;
+    grid-template-areas: ". x x ."
+                         ". a b .";
+    grid-gap: 5px;
+}
+
+.footer{
+    position: absolute; 
+    bottom: 0; 
+    width: 100%;
+    background-color: #BCD329;
+}
+
+.giga{
+    background-size: cover;
+}
+
+.x {
+    background-color: #181739;
+    grid-area: x;
+    height: 170px;
+}
+
+.a {
+    background-image: url('https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2018/12/moviles-relacion-calidad-precio.jpg');
+    grid-area: a;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.b {
+    background-image: url('https://www.testdevelocidad.es/app/uploads/2018/07/tarifas-m%C3%B3viles-verano-768x.png');
+    grid-area: b;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.a:hover::after {
+    content: "Productos";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5em;
+    color: white;
+    
+}
+
+.b:hover::after {
+    content: "Tarifas"; /* Cambia según tus necesidades */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5em;
+    color: white;
+    
+}
+
+@media (max-width: 767px) {
+    .containerGrid {
+        grid-template-rows: auto; /* Cambia a una disposición de una sola columna */
+        grid-template-areas: "x"
+                             "a"
+                             "b";
+    }
+
+    .x{
+        grid-area: x;
+    }
+    .a {
+        grid-area: a;
+    }
+    .b{
+        grid-area: b;
+        
+    }
+    
+}
+
+.video{
+    padding-top: 30px;
+    text-align: center;
+    margin: auto;
+}
